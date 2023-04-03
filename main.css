@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+header {
+    background-color: #525254;
+    padding: 16px 0;
+    color: #fff;
+    display: flex;
+    border-bottom: 16px solid #000;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+form {
+    background-color: #a9a9a9;
+    padding: 24px;
+    text-align: center;
+}
+
+input {
+    padding: 8px;
+    width: 90%;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+button {
+    padding: 8px;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+button:hover {
+    background: #525254;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    background: #d6d6d6;
+    padding: 1px 24px;
+    font-size: 16px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul li:hover {
+    background: #525254;
+}
+
+ul li.checked {
+    background: #a9a9a9;
+    color: #000;
+    text-decoration: line-through;
+}
