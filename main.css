@@ -22,7 +22,7 @@
 .produtos__bloco--descricao {
   color: gray;
 }
-.produtos__bloco-em-destaque { /* modificador */
+.produtos__bloco__em--destaque { /* modificador */
   border: 2px solid gold;
   padding: 8px;
   background-color: #ffff42;
