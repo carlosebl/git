@@ -1,10 +1,23 @@
-function validaNumero() {
-    var numA = parseFloat(document.getElementById('numA').value);
-    var numB = parseFloat(document.getElementById('numB').value);
+document.addEventListener('DOMContentLoaded', function() {
+    const nameElement = document.querySelector('#name');
+    const usernameElement = document.querySelector('#username');
+    const avatarElement = document.querySelector('#avatar');
+    const reposElement = document.querySelector('#repos');
+    const followersElement = document.querySelector('#followers');
+    const followingElement = document.querySelector('#following');
+    const linkElement = document.querySelector('#link');
 
-    if (numA >= numB) {
-        alert ("Erro! O segundo número deve ser maior que o primeiro.")
-    } else {
-        alert ("Muito bem! O segundo número é maior que o primeiro.")
-    }
-}
+    fetch('https://api.github.com/users/carlosebl')
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(json) {
+        nameElement.innerText = json.name;
+        usernameElement.innerText = json.login;
+        avatarElement.src = json.avatar_url;
+        followersElement.innerText = json.followers;
+        followingElement.innerText = json.following;
+        repos.innerText = json.public_repos;
+        linkElement.href = json.html_url;
+    })
+})
