@@ -7,17 +7,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const followingElement = document.querySelector('#following');
     const linkElement = document.querySelector('#link');
 
-    fetch('https://api.github.com/users/carlosebl')
-    .then(function(res) {
-        return res.json();
-    })
-    .then(function(json) {
-        nameElement.innerText = json.name;
-        usernameElement.innerText = json.login;
-        avatarElement.src = json.avatar_url;
-        followersElement.innerText = json.followers;
-        followingElement.innerText = json.following;
-        repos.innerText = json.public_repos;
-        linkElement.href = json.html_url;
-    })
+    try {
+        fetch('https://api.github.com/users/carlosebl')
+            .then(function(res) {
+                return res.json();
+            })
+            .then(function(json) {
+                nameElement.innerText = json.name;
+                usernameElement.innerText = json.login;
+                avatarElement.src = json.avatar_url;
+                followersElement.innerText = json.followers;
+                followingElement.innerText = json.following;
+                repos.innerText = json.public_repos;
+                linkElement.href = json.html_url;
+            });
+    } catch (error) {
+        console.log(error);
+        alert('An error occurred while fetching user data.');
+    }
 })
