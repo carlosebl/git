@@ -1,43 +1,15 @@
-class Forma {
-    constructor(cor) {
-        this.cor = cor;
-    }
+const alunos = [
+    { nome: 'Alice', nota: 8 },
+    { nome: 'Bruno', nota: 5 },
+    { nome: 'Carla', nota: 7 },
+    { nome: 'Davi', nota: 9 },
+    { nome: 'Eva', nota: 4 },
+];
 
-    draw() {
-        console.log(`Desenhando uma forma colorida ${this.cor}`);
-    }
+function getAprovados(arrayAlunos) {
+    return arrayAlunos.filter(aluno => aluno.nota >= 6);
 }
 
-class Circulo extends Forma {
-    constructor(cor, raio) {
-        super(cor);
-        this.raio = raio;
-    }
+const aprovados = getAprovados(alunos);
 
-    calculateArea() {
-        return Math.PI * this.raio ** 2;
-    }
-}
-
-class Quadrado extends Forma {
-    constructor(cor, lado) {
-        super(cor);
-        this.lado = lado;
-    }
-
-    calculateArea() {
-        return this.lado ** 2;
-    }
-}
-
-const circuloVermelho = new Circulo('vermelho', 5);
-const quadradoAzul = new Quadrado('azul', 4);
-const formaVerde = new Forma('verde');
-
-circuloVermelho.draw();
-console.log(`Area of circuloVermelho: ${circuloVermelho.calculateArea()}`);
-
-quadradoAzul.draw();
-console.log(`Area of quadradoAzul: ${quadradoAzul.calculateArea()}`);
-
-formaVerde.draw();
+console.log('Alunos aprovados:', aprovados);
